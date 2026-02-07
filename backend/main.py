@@ -52,16 +52,21 @@ app = FastAPI(
 cors_origins = os.getenv(
     "CORS_ORIGINS", "http://localhost:3000,http://localhost:5173"
 ).split(",")
+    
+allow_vercel = os.getenv("ALLOW_VERCEL_ORIGINS", "true").lower() != "false"
+vercel_origin_regex = os.getenv("VERCEL_ORIGIN_REGEX", r".*\\.vercel\\.app$") if allow_vercel else None
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
+    allow_origin_regex=vercel_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Log configured CORS origins at startup so runtime env is visible in logs
-logger.info(f"CORS origins configured: {cors_origins}")
+logger.info(f"CORS origins configured: {cors_origins}; vercel_regex={vercel_origin_regex}")
 
 # Production hardening middleware (error handling, rate limiting, security headers)
 from backend.middleware import setup_production_middleware
