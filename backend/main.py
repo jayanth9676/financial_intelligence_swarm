@@ -60,6 +60,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Log configured CORS origins at startup so runtime env is visible in logs
+logger.info(f"CORS origins configured: {cors_origins}")
+
 # Production hardening middleware (error handling, rate limiting, security headers)
 from backend.middleware import setup_production_middleware
 
