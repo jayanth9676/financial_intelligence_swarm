@@ -19,7 +19,7 @@ import { useDashboardSync } from "@/hooks/useWebSocket";
 import { toast } from "sonner";
 import { getTransaction, api, getAnnexIV, getAnnexIvPdfUrl, AnnexIVResponse } from "@/lib/api";
 import { Transaction as ApiTransaction, RiskLevel } from "@/lib/types";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 // Extend Transaction for UI display needs (add derived statuses)
 type UIStatus = "pending" | "investigating" | "completed" | "approved" | "blocked" | "escalated";
@@ -58,7 +58,20 @@ function toUITransaction(tx: ApiTransaction): Transaction {
 export default function Home() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  // useSearchParams can cause prerendering errors in Next's app router during
+  // static export. Use a client-only window-based URLSearchParams synced via
+  // effect to avoid needing suspense boundaries.
+  const [searchParams, setSearchParams] = useState<URLSearchParams>(
+    typeof window !== "undefined" ? new URLSearchParams(window.location.search) : new URLSearchParams("")
+  );
+
+  useEffect(() => {
+    const update = () => setSearchParams(new URLSearchParams(window.location.search));
+    // initialize and listen for history navigation
+    update();
+    window.addEventListener("popstate", update);
+    return () => window.removeEventListener("popstate", update);
+  }, []);
 
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [selectedUetr, setSelectedUetr] = useState<string | null>(null);
@@ -156,7 +169,7 @@ export default function Home() {
       toast.error("Failed to load transaction details");
       console.error(err);
     }
-  }, [pathname, router, searchParams, reset, loadResult]);
+  }, [pathname, router, reset, loadResult]);
 
   // URL helper for params
   const updateUrlParam = (key: string, value: string | null) => {
