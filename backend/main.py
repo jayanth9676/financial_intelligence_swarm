@@ -50,8 +50,12 @@ app = FastAPI(
 
 # CORS for frontend - support environment-based origins
 cors_origins = os.getenv(
-    "CORS_ORIGINS", "http://localhost:3000,http://localhost:5173"
+    "CORS_ORIGINS", "https://financial-intelligence-swarm-2yx93tp05.vercel.app,https://financialintelligenceswarm-production.up.railway.app"
 ).split(",")
+# for local development, allow all origins. In production, specify allowed origins via CORS_ORIGINS env variable.
+# cors_origins = os.getenv(
+#     "CORS_ORIGINS", "http://localhost:3000,http://localhost:5173"
+# ).split(",")
     
 allow_vercel = os.getenv("ALLOW_VERCEL_ORIGINS", "true").lower() != "false"
 vercel_origin_regex = os.getenv("VERCEL_ORIGIN_REGEX", r".*\\.vercel\\.app$") if allow_vercel else None
