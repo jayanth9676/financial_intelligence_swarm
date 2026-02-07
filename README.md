@@ -33,7 +33,7 @@ graph TD
         Mem0 <--> Qdrant
     end
 
-    subgraph Agentic Swarm (LangGraph)
+    subgraph "Agentic Swarm (LangGraph)"
         Prosecutor[Prosecutor Agent]
         Skeptic[Skeptic Agent]
         Judge[Judge Agent]
