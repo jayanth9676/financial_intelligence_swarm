@@ -17,6 +17,6 @@ boto3==1.28.0
 fastembed==0.7.4
 
 # Optional (enable if using Gemini or Bedrock)
-langchain-google-genai==4.2.0
-langchain-aws==0.3.0
-langchain-community==0.4.1
+langchain-google-genai
+langchain-aws
+langchain-community
