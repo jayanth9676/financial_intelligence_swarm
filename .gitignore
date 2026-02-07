@@ -1,0 +1,65 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+.env
+
+# Virtual environments
+.venv
+
+.ruff_cache
+
+.pytest_cache
+
+.vscode
+
+prds
+
+screenshots
+
+uv.lock
+
+# Additional recommended ignores
+# Environment files
+.env.*
+
+# Alternate virtualenv names
+venv/
+env/
+
+# Python bytecode / compiled extensions
+*.py[cod]
+*.pyd
+
+# Test / coverage
+.coverage
+htmlcov/
+
+# Packaging
+pip-wheel-metadata/
+
+# IDE/editor
+.idea/
+
+# Logs and caches
+*.log
+*.sqlite3
+.cache/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/build/
+opencode.json
+
+# Local python version file
+.python-version
+
+# Generated or large data files
+data/transactions_store.json
+data/data_raw/
+sar_downloads/
