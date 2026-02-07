@@ -174,8 +174,6 @@ Below are example screenshots from the demo and visualizations.
 
 ![Demo Screenshot](screenshots/image.png)
 
-![Demo Screenshot - copy](screenshots/image copy.png)
-
 ![Screenshot 1](screenshots/image1.png)
 
 ![Screenshot 2](screenshots/image2.png)
