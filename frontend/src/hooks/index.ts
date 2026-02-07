@@ -1,0 +1,1 @@
+export { useInvestigation } from "./useInvestigation";
