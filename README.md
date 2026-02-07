@@ -168,6 +168,28 @@ The demo includes a target transaction (`eb9a5c8e-2f3b-4c7a-9d1e-5f8a2b3c4d5e`) 
 
 This showcases the debate pattern where the payment grid explains the amount, but cannot explain the hidden link, resulting in human oversight requirement.
 
+## Screenshots
+
+Below are example screenshots from the demo and visualizations.
+
+![Demo Screenshot](screenshots/image.png)
+
+![Demo Screenshot - copy](screenshots/image copy.png)
+
+![Screenshot 1](screenshots/image1.png)
+
+![Screenshot 2](screenshots/image2.png)
+
+![Screenshot 3](screenshots/image3.png)
+
+![Visualization A](screenshots/visualisation.png)
+
+![Visualization B](screenshots/visualisation2.png)
+
+## Demo recording
+
+Loom walkthrough: [Watch the demo on Loom](https://www.loom.com/share/d9aef77bb39c4671963110325d474c3d)
+
 ## License
 
 Proprietary - All rights reserved
