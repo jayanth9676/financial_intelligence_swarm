@@ -27,4 +27,5 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Run the application
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Use shell form (sh -c) to properly expand the PORT environment variable
+CMD ["sh", "-c", "gunicorn -k uvicorn.workers.UvicornWorker backend.main:app --bind 0.0.0.0:${PORT:-8080} --timeout 120"]
