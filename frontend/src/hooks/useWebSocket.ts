@@ -25,7 +25,7 @@ interface UseWebSocketOptions {
 	reconnectInterval?: number;
 }
 
-const WS_BASE_URL = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000";
+import { WS_BASE_URL } from "../lib/api";
 
 export function useWebSocket(options: UseWebSocketOptions = {}) {
 	const {
@@ -80,7 +80,7 @@ export function useWebSocket(options: UseWebSocketOptions = {}) {
 				onDisconnect?.();
 				wsRef.current = null;
 
-			// Auto-reconnect using ref to get latest connect function
+				// Auto-reconnect using ref to get latest connect function
 				if (autoReconnect && !reconnectTimeoutRef.current) {
 					reconnectTimeoutRef.current = setTimeout(() => {
 						reconnectTimeoutRef.current = null;
@@ -89,7 +89,7 @@ export function useWebSocket(options: UseWebSocketOptions = {}) {
 				}
 			};
 
-		ws.onerror = () => {
+			ws.onerror = () => {
 				// WebSocket errors don't expose useful info in the browser
 				// The connection will close and trigger onclose handler for retry
 				// Only log at debug level to avoid noisy console errors

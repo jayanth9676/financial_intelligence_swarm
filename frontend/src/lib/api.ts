@@ -39,11 +39,17 @@ const rawApiUrl =
     : process.env.API_URL || "http://localhost:8000";
 
 /**
- * Ensure the API URL has a protocol. If missing, default to https://
+ * Ensure the API URL has a protocol and no trailing slash.
  */
-const API_BASE_URL = rawApiUrl.match(/^https?:\/\//)
-  ? rawApiUrl
-  : `https://${rawApiUrl}`;
+const API_BASE_URL = (
+  rawApiUrl.match(/^https?:\/\//) ? rawApiUrl : `https://${rawApiUrl}`
+).replace(/\/$/, "");
+
+/**
+ * WebSocket Base URL derived from API_BASE_URL
+ * Replaces http(s) with ws(s)
+ */
+export const WS_BASE_URL = API_BASE_URL.replace(/^http/, "ws");
 
 /**
  * Enable debug logging (can be set via environment variable)
