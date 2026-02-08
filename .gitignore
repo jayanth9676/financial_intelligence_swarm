@@ -19,8 +19,6 @@ wheels/
 
 prds
 
-uv.lock
-
 # Additional recommended ignores
 # Environment files
 .env.*
