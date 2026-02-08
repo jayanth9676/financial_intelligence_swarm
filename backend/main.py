@@ -212,6 +212,10 @@ def stream_error(message: str) -> str:
     return f"e:{json.dumps({'message': message})}\n"
 
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "service": "fis-backend"}
+
 @app.get("/")
 async def root():
     return {
