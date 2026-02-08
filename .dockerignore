@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+
+# Frontend
+frontend/
+node_modules/
+
+# Python / Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+.env
+.env.*
+
+# Data & Artifacts
+data/
+sar_downloads/
+screenshots/
+prds/
+site/
+
+# IDE
+.vscode
+.idea
+
+# Logs
+*.log
