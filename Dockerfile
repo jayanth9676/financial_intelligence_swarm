@@ -2,13 +2,21 @@ FROM python:3.11-slim-bookworm
 
 WORKDIR /app
 
-# Install system dependencies if needed (e.g. for building some python packages)
-# RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
+# Install system dependencies
+# gcc and python3-dev might be needed for building some deps
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
+# Copy requirements first
 COPY requirements.txt .
 
-# Install dependencies
+# CRITICAL: Install CPU-only version of PyTorch first to avoid downloading 4GB+ CUDA binaries
+# docling or fastembed might depend on torch
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# Install remaining dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application

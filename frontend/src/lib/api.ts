@@ -33,10 +33,17 @@ import type {
  * API base URL from environment or default to localhost.
  * Set NEXT_PUBLIC_API_URL in .env.local for different environments.
  */
-const API_BASE_URL =
+const rawApiUrl =
   typeof window !== "undefined"
     ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
     : process.env.API_URL || "http://localhost:8000";
+
+/**
+ * Ensure the API URL has a protocol. If missing, default to https://
+ */
+const API_BASE_URL = rawApiUrl.match(/^https?:\/\//)
+  ? rawApiUrl
+  : `https://${rawApiUrl}`;
 
 /**
  * Enable debug logging (can be set via environment variable)
