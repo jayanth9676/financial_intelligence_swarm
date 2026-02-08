@@ -19,6 +19,11 @@ wheels/
 
 prds
 
+.agent
+.agents
+.claude
+.github
+
 # Additional recommended ignores
 # Environment files
 .env.*
