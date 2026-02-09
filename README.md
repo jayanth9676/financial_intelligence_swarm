@@ -50,6 +50,20 @@ graph TD
     end
 ```
 
+### Mindmap
+
+![Mindmap](screenshots/Mind_Map.png)
+
+## Demo recording
+
+Product walkthrough: [Watch the demo on Loom](https://www.loom.com/share/d9aef77bb39c4671963110325d474c3d)
+
+Demo recordings (Business & Technical):
+
+- [1st demo recording](https://drive.google.com/file/d/1kpVzGejxwFH4rUu7X6zg9rBkfGWb-rhM/view?usp=sharing)
+- [2nd demo recording](https://drive.google.com/file/d/1laZGy2OFxRnbLrqTrfcvmUKTRfYbkbd3/view?usp=sharing)
+- [3rd demo recording](https://drive.google.com/file/d/1NlUUwv2Yy0XUGpY7e0Pf__oCkoOpTKAy/view?usp=sharing)
+
 ## Screenshots
 
 Below are example screenshots from the demo and visualizations.
@@ -65,21 +79,6 @@ Below are example screenshots from the demo and visualizations.
 ![Visualization A](screenshots/visualisation.png)
 
 ![Visualization B](screenshots/visualisation2.png)
-
-### Mindmap
-
-![Mindmap](screenshots/Mind_Map.png)
-
-## Demo recording
-
-Loom walkthrough: [Watch the demo on Loom](https://www.loom.com/share/d9aef77bb39c4671963110325d474c3d)
-
-Local demo recordings (external links):
-
-- [1st demo recording](https://drive.google.com/file/d/1kpVzGejxwFH4rUu7X6zg9rBkfGWb-rhM/view?usp=sharing)
-- [2nd demo recording](https://drive.google.com/file/d/1laZGy2OFxRnbLrqTrfcvmUKTRfYbkbd3/view?usp=sharing)
-- [3rd demo recording](https://drive.google.com/file/d/1NlUUwv2Yy0XUGpY7e0Pf__oCkoOpTKAy/view?usp=sharing)
-
 
 ### Components
 
