@@ -68,17 +68,17 @@ Below are example screenshots from the demo and visualizations.
 
 ### Mindmap
 
-![Mindmap](screenshots/mindmap.png)
+![Mindmap](screenshots/Mind_Map.png)
 
 ## Demo recording
 
 Loom walkthrough: [Watch the demo on Loom](https://www.loom.com/share/d9aef77bb39c4671963110325d474c3d)
 
-Local demo recordings (added):
+Local demo recordings (external links):
 
-- [demos/1st.mp4](demos/1st.mp4)
-- [demos/2nd.mp4](demos/2nd.mp4)
-- [demos/3rd.mp4](demos/3rd.mp4)
+- [1st demo recording](https://drive.google.com/file/d/1kpVzGejxwFH4rUu7X6zg9rBkfGWb-rhM/view?usp=sharing)
+- [2nd demo recording](https://drive.google.com/file/d/1laZGy2OFxRnbLrqTrfcvmUKTRfYbkbd3/view?usp=sharing)
+- [3rd demo recording](https://drive.google.com/file/d/1NlUUwv2Yy0XUGpY7e0Pf__oCkoOpTKAy/view?usp=sharing)
 
 
 ### Components
